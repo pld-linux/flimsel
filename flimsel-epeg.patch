@@ -1,0 +1,22 @@
+--- flimsel-0.0.6-orig/configure.ac	2009-08-08 23:38:13.000000000 +0200
++++ flimsel-0.0.6/configure.ac	2009-08-16 11:28:14.845001152 +0200
+@@ -49,14 +49,13 @@
+ 
+ # Check for epeg
+ AC_PATH_PROG(EPEGCONFIG,epeg-config)
+-if test "x$EPEGCONFIG" = x; then
+-	echo "epeg-config not found"
++if (pkg-config epeg); then
++	CXXFLAGS="`pkg-config --cflags epeg` $CXXFLAGS"
++	LIBS="`pkg-config --libs epeg` $LIBS"
++else
++	echo "epeg.pc not found (check your pkg-config installation)"
+ 	exit 1
+ fi
+ 
+-CXXFLAGS="`$EPEGCONFIG --cflags` $CXXFLAGS"
+-LIBS="`$EPEGCONFIG --libs` $LIBS"
+-
+-
+ AC_CONFIG_FILES([Makefile src/Makefile])
+ AC_OUTPUT
