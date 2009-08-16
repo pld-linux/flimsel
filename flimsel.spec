@@ -24,9 +24,11 @@ flimsel egy minimalista digitális képbőngésző fltk alapokon.
 Summary:	An example script
 Summary(hu.UTF-8):	Egy példa szkript
 Group:		X11/Applications/Graphics
+Requires:	feh
 Requires:	flimsel = %{version}-%{version}
 Requires:	gimp
 Requires:	libjpeg-progs
+Requires:	xorg-app-xmessage
 
 %description example
 An example script that shows how to customize flimsel.
