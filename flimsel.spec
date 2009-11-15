@@ -9,8 +9,12 @@ Source0:	http://www.ecademix.com/JohannesHofmann/%{name}-%{version}.tar.gz
 # Source0-md5:	5f993c4c6ed5a5ace7cd552adf89182f
 Patch0:		%{name}-epeg.patch
 URL:		http://www.ecademix.com/JohannesHofmann/flimsel.html
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	epeg-devel
 BuildRequires:	fltk-devel
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
